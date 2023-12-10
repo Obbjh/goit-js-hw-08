@@ -27,3 +27,4 @@ const lightbox = new SimpleLightbox(".gallery__link", {
   captionDelay: 250,
   captionsData: "alt",
 });
+
