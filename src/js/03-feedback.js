@@ -20,6 +20,8 @@ function onFormSubmit(e) {
         alert('Всі поля форми, мають бути заповенені.');
         return;
     }
+
+    console.log(formData);
    
     e.currentTarget.reset();
     localStorage.removeItem(KEY_STORAGE);
@@ -32,7 +34,15 @@ function onFormInput(e) {
 }
 
 function PopulateTextarea() {
-    const savedMessage = localStorage.getItem(KEY_STORAGE);
+    const savedMessage = JSON.parse(localStorage.getItem(KEY_STORAGE));
+
+    if (savedMessage && savedMessage.email) {
+        emailForm.value = savedMessage.email;
+    }
+
+    if (savedMessage && savedMessage.message) {
+        textareaForm.value = savedMessage.message;
+    }
 }
 
-console.log(`5555`);
+
