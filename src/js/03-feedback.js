@@ -31,6 +31,11 @@ function onFormSubmit(e) {
 function onFormInput(e) {
     formData[e.target.name] = e.target.value;
     localStorage.setItem(KEY_STORAGE, JSON.stringify(formData));
+
+    console.log({
+        email: formData.email,
+        message: formData.message
+    });
 }
 
 function PopulateTextarea() {
