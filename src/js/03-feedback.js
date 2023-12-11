@@ -4,7 +4,7 @@ const loginForm = document.querySelector(`.feedback-form`);
 const emailForm = document.querySelector(`.feedback-form input`);
 const textareaForm = document.querySelector(`.feedback-form textarea`);
 
-KEY_STORAGE = `feedback-form-state`;
+const KEY_STORAGE = `feedback-form-state`;
 
 let formData = {};
     
