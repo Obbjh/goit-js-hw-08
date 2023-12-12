@@ -7,11 +7,11 @@ const textareaForm = document.querySelector(`.feedback-form textarea`);
 const KEY_STORAGE = `feedback-form-state`;
 
 let formData = {};
+
+PopulateTextarea();
     
 loginForm.addEventListener(`submit`, onFormSubmit);
 loginForm.addEventListener(`input`, throttle(onFormInput, 500));
-
-PopulateTextarea();
 
 function onFormSubmit(e) {   
     e.preventDefault();
@@ -47,6 +47,8 @@ function PopulateTextarea() {
     if (savedMessage && savedMessage.message) {
         textareaForm.value = savedMessage.message;
     }
+
+    formData = savedMessage || {};
 }
 
 
