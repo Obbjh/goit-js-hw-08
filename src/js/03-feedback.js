@@ -47,8 +47,6 @@ function PopulateTextarea() {
     if (savedMessage && savedMessage.message) {
         textareaForm.value = savedMessage.message;
     }
-
-    formData = savedMessage || {};
 }
 
 
