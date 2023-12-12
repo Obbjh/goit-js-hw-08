@@ -21,7 +21,10 @@ function onFormSubmit(e) {
         return;
     }
 
-    console.log(formData);
+    console.log({
+        email: formData.email,
+        message: formData.message
+    });
    
     e.currentTarget.reset();
     localStorage.removeItem(KEY_STORAGE);
@@ -32,10 +35,6 @@ function onFormInput(e) {
     formData[e.target.name] = e.target.value;
     localStorage.setItem(KEY_STORAGE, JSON.stringify(formData));
 
-    console.log({
-        email: formData.email,
-        message: formData.message
-    });
 }
 
 function PopulateTextarea() {
@@ -48,6 +47,8 @@ function PopulateTextarea() {
     if (savedMessage && savedMessage.message) {
         textareaForm.value = savedMessage.message;
     }
+
+    formData = savedMessage || {};
 }
 
 
